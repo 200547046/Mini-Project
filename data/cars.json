@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "name": "Model S",
+    "brand": "Tesla",
+    "description": "Electric car with autopilot.",
+    "image": "teslas.png"
+  },
+  {
+    "id": 2,
+    "name": "Mustang",
+    "brand": "Ford",
+    "description": "Classic American muscle car.",
+    "image": "Mustang.png"
+  },
+  {
+    "id": 3,
+    "name": "Civic",
+    "brand": "Honda",
+    "description": "Reliable and fuel-efficient sedan.",
+    "image": "honda.png"
+  },
+  {
+    "id": 4,
+    "name": "Camaro",
+    "brand": "Chevrolet",
+    "description": "Powerful and stylish sports car.",
+    "image": "camero.png"
+  },
+  {
+    "id": 5,
+    "name": "Corolla",
+    "brand": "Toyota",
+    "description": "Best-selling compact car.",
+    "image": "toyoto.png"
+  },
+  {
+    "id": 6,
+    "name": "911",
+    "brand": "Porsche",
+    "description": "High-performance sports car.",
+    "image": "911.png"
+  }
+]

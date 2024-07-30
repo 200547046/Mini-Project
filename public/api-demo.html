@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car List - Car Showroom</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="car-list-page">
+  <header>
+    <h1>Available Cars</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="api-demo.html">Car List</a>
+    </nav>
+  </header>
+  <div class="container">
+    <h2>Car List</h2>
+    <p>Click the button below to load the available cars:</p>
+    <button id="fetch-button" class="button">Load Cars</button>
+    <div id="items-container"></div>
+  </div>
+  <script>
+    document.getElementById('fetch-button').addEventListener('click', async () => {
+      try {
+        const response = await fetch('/api/cars');
+        const data = await response.json();
+        displayItems(data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    });
+
+    function displayItems(items) {
+      const container = document.getElementById('items-container');
+      container.innerHTML = ''; 
+
+      items.forEach(item => {
+        const itemElement = document.createElement('div');
+        itemElement.className = 'car-item';
+        itemElement.innerHTML = `
+          <h2>${item.name}</h2>
+          <p><strong>Brand:</strong> ${item.brand}</p>
+          <p>${item.description}</p>
+          <img src="images/${item.image}" alt="${item.name}" width="200">
+        `;
+        container.appendChild(itemElement);
+      });
+    }
+  </script>
+</body>
+</html>
